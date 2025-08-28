@@ -37,3 +37,5 @@ python3 live_inference.py
 ```
 
 # Model
+
+Databases used: CREMA-D, Freesound Oneshot Percussive Sounds
