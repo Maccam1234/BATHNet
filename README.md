@@ -12,9 +12,9 @@ The model was made to run the VIA VAB5000, a Pico-ITX Single Board Computer with
 
 Thus:
 * The model is saved as a tflite file.
-* `inference.py` and `live_inference.py` can only run the model on the VAB5000, as they utilize VIA's `NeuronRuntimeHelper` package.
+* `inference.py` and `live_inference.py` can only run on VIA products powered by MediaTek Genio 700, as they utilize VIA's `NeuronRuntimeHelper` package.
 
-To run the model on the VAB5000, make sure whichever inference file you use is in the same directory as `bathnet.tflite` on the VAB5000, then compile `bathnet.tflite` into a `.dla` file using the Mediatek NeuronSDK:
+To run the model on the VAB5000, make sure whichever inference file you use is in the same directory as `bathnet.tflite` on the VAB5000, then compile `bathnet.tflite` into a `.dla` file using the MediaTek NeuronSDK:
 ```shell
 sudo ncc-tflite -arch mdla3.0 --relax-fp32 --opt-accuracy bathnet.tflite
 ```
@@ -46,7 +46,7 @@ As the model was built for use in personal bathrooms, these 4 categories cover m
 
 ### Structure
 
-BATHNet uses YAMNet's pretrained backbone to feature extract 1024D embeddings from 96x64 log mel spectrogram inputs. While YAMNet allows for variable length audio inputs and pools its embeddings for classification, BATHNet only accepts a single mel spectrogram (0.96s audio input) so that a single embedding is extracted. From this, the embedding is classified by our newly trained classification head. The structure can be understood as:
+BATHNet uses YAMNet's pretrained backbone to feature extract 1024D embeddings from 96x64 log mel spectrogram inputs. While YAMNet allows for variable length audio inputs and pools its embeddings for classification, BATHNet only accepts a single mel spectrogram(0.96s audio input) so that a single embedding is extracted. From this, the embedding is classified by our newly trained classification head. The structure can be understood as:
 
 0.96s wav `--preprocess-->` 96x64 mel spectrogram `--YAMNet-feature-extraction-->` 1024D embedding `--classification-head-->` label
 
