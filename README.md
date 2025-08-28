@@ -48,7 +48,7 @@ As the model was built for use in personal bathrooms, these 4 categories cover m
 
 BATHNet uses YAMNet's pretrained backbone to feature extract 1024D embeddings from 96x64 log mel spectrogram inputs. While YAMNet allows for variable length audio inputs and pools its embeddings for classification, BATHNet only accepts a single mel spectrogram(0.96s audio input) so that a single embedding is extracted. From this, the embedding is classified by our newly trained classification head. The structure can be understood as:
 
-0.96s wav `--preprocess-->` 96x64 mel spectrogram `--YAMNet-feature-extraction-->` 1024D embedding `--classification-head-->` label
+0.96s wav `--preprocess-->` 96x64 mel spectrogram `--YAMNet-feature-extraction-->` 1024D embedding `--BATHNet-classification-head-->` label
 
 More deatils about preprocessing and feature extraction can be found at the [YAMNet](https://github.com/tensorflow/models/blob/master/research/audioset/yamnet/README.md) repository.
 
