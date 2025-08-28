@@ -1,6 +1,6 @@
 # BATHNet
 
-BATHNet is a bathroom saftey audio classifier used to identify any abnormal(falls, screams etc.) sounds in the bathroom. This model employs the [Mobilenet_v1](https://arxiv.org/pdf/1704.04861.pdf) depthwise-separable convolution architecture, and was trained via transfer learning on [YAMNet](https://github.com/tensorflow/models/blob/master/research/audioset/yamnet/README.md), a pretrained general audio classifier.
+BATHNet is a bathroom safety audio classifier used to identify any abnormal(falls, screams etc.) sounds in the bathroom. This model employs the [Mobilenet_v1](https://arxiv.org/pdf/1704.04861.pdf) depthwise-separable convolution architecture, and was trained via transfer learning on [YAMNet](https://github.com/tensorflow/models/blob/master/research/audioset/yamnet/README.md), a pretrained general audio classifier.
 
 This directory contains the original YAMNet file, training data, training scripts, inference scripts, final model as well as exploration notebooks.
 
